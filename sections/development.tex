@@ -1,0 +1,27 @@
+\section{What the development patches passed}
+
+\label{sec:development}
+
+\subsection{A second frozen check on Angstrom}
+
+In four Angstrom development conditions, the agents received an example of the finding along with the repair task. Of the 108 sessions in these conditions, 96 produced a patch that passed the example supplied to the agent. Another security check, fixed before these patches were assessed, still detected a problem in 18 of those 96. The 108 tell us how many sessions supplied an opportunity to pass an example. The 96 tell us how many patches a maintainer might have accepted on the strength of that pass. The 18 describe what an additional check found among the latter (Table~\ref{tab:development}).
+
+\begin{table}[tbp]
+\centering
+\caption{Development repairs and their entry conditions. Each row concerns one finding under the stated assessment.}
+\label{tab:development}
+\small
+\input{tables/development}
+\end{table}
+
+The archived grades distinguish two ways of obtaining additional evidence. A second check of the same scenario caught eight of the 18. A variant alone caught the other ten. For the first eight, a different assessment could change the verdict even without changing the scenario. For the other ten, the variant exposed a problem that the same-scenario checks had missed. Whether a variant exercises a second requirement is a separate matter. Changing an input or taking another observation can strengthen the evidence about the original obligation. Counting tests alone would give both situations the same description. The grades concern repeated attempts on one finding, so the proportions describe that development exercise. They supply no estimate of how often a new audited finding will exhibit either pattern.
+
+\subsection{Later evidence and a ceiling on Ekubo}
+
+At Ekubo the earlier decision already included a check on ordinary use. Of 144 submissions, 59 passed the original security and ordinary-use checks. Subsequent checks detected the reported defect in 17 of these 59 earlier successes (Table~\ref{tab:development}). The price-history example in Section~\ref{sec:introduction} illustrates the significance of looking at the answer available to a caller. A maintainer who had already required evidence of ordinary use could still have reason to reopen a repair decision. The 59 form the appropriate denominator for this question because they had met both original conditions. Using all 144 would answer a question about the complete set of submissions, including patches already rejected by the earlier assessment.
+
+Inspection of the Ekubo patches informed the later checks. This gives concrete evidence of ways that particular submitted patches could pass the earlier assessment. It also means that the later checks had an opportunity to target mistakes made by those patches. Applying them to the same patches cannot estimate how often a battery drawn up in advance would detect a remaining defect on another finding.
+
+A second configuration on Ekubo produced 48 counted patches across four conditions, twelve per condition. Two conditions supplied no test. All 48 passed the original mechanical assessment, ordinary-use checks, and all five follow-up checks. The aggregate record also documents five starts interrupted by usage limits that the operator set aside and repeated. One of those five records a failed result following an agent error. Keeping these starts identifiable matters because an interruption can coincide with evidence about what the agent actually did. Thus the result describes the counted sessions with that handling of interruptions. Under these checks there was no room to distinguish any two of the counted patches by the number of follow-up checks passed (Table~\ref{tab:development}).
+
+These records cannot rank the configurations. They differ in exposure to examples, the follow-up checks were developed using the earlier submissions, and comparable independent human review of the patches was unavailable. The different results pose two empirical questions. How demanding is the assessment on eligible findings? And, for the same finding under common assessment, does the choice of example affect what a patch restores? Work on repair overfitting supplies precedents for both the measurement and the comparison.~\cite{smith2015overfitting,motwani2022quality}

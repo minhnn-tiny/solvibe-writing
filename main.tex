@@ -1,5 +1,5 @@
 \documentclass[acmsmall,screen,review,anonymous]{acmart}
-% Review manuscript based on the ACM acmsmall conference sample.
+\usepackage{tabularx}
 \acmJournal{PACMSE}
 \acmConference[ISSTA '27]{ACM SIGSOFT International Symposium on Software Testing and Analysis}{September 7--10, 2027}{Singapore}
 \setcopyright{none}
@@ -11,24 +11,20 @@
 \author{Anonymous Author(s)}
 \renewcommand{\shortauthors}{Anonymous Author(s)}
 \begin{document}
-
 \begin{abstract}
-A maintainer who accepts a patch because it passes the regression test in an audit report still has to decide whether other callers can rely on the repaired contract. In an archived Solidity repair study, 18 of 96 Angstrom patches that passed the supplied example failed another frozen security check. In a separate Ekubo study, follow-up checks found the reported defect in 17 of 59 patches that had passed both the original checks and the ordinary-use suite. Neither study varied which example of the same defect the agent received under random assignment. We describe a benchmark that separates three questions: whether a patch corrects the reported behaviour while preserving specified ordinary use, how often the same attempts also satisfy a distinct withheld behaviour on a qualified subset, and whether choosing which of two examples to show changes what the agent repairs. Among 160 external findings reviewed for scope, 38 cleared documentary review, 37 built on both historical revisions, and 18 have evidence of affected ordinary use on both revisions offline. Five cases have evidence pages ready for human admission. The planned repair experiment awaits a signed roster. This first version reports the development studies and case-construction results; the comparative repair outcomes remain open.
+\input{sections/abstract}
 \end{abstract}
-
 \ccsdesc[500]{Software and its engineering~Software testing and debugging}
 \ccsdesc[300]{Security and privacy~Software security engineering}
-\keywords{automated program repair, Solidity, regression testing, repair evaluation}
+\keywords{automated program repair, Solidity, regression testing, smart contracts, patch assessment}
 \maketitle
-
-\input{sections/question}
-\input{sections/evidence}
-\input{sections/study}
+\input{sections/introduction}
+\input{sections/development}
+\input{sections/related-work}
+\input{sections/qualification}
+\input{sections/repair-study}
 \input{sections/interpretation}
-
-\section*{Data Availability}
-The counts in this version come from archived development runs, dated screening tables, and versioned case records. No anonymous replication package has been deposited as of this draft. Case admission and the design freeze are still open. Early disclosure of protected judgments or withheld behaviours to study participants would compromise the comparison. For review, we plan an anonymized package with the screening rules, aggregate and redacted case tables, the analysis, the dated outcome amendment, and the evidence supporting each reported comparison. The final package will distinguish shareable upstream material from items for which only an identifier or a digest can be redistributed. Any material still sealed at submission will be identified with the reason and its release conditions.
-
+\input{sections/data-availability}
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 \end{document}

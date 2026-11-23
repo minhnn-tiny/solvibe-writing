@@ -1,0 +1,45 @@
+\section{Which findings can support a repair verdict?}
+
+\label{sec:qualification}
+
+\subsection{From audit reports to an eligible case}
+
+We started from two collections. The historical archive contains 140 case records from earlier work. We screened external audit reports separately to obtain candidates from other projects. Table~\ref{tab:qualification} follows the external findings through review. The screen covered 647 finding records across 54 reports and selected 333 for documentary follow-up. The unit is a recorded finding. Several findings can belong to one upstream family or concern related revisions. A public description earns a place for further reading. To admit the finding, we also need a traceable reference correction and an assessment that exercises the affected feature.
+
+\begin{table}[tbp]
+\centering
+\caption{External finding records as of 23 November 2026. A scope decision allows technical qualification. Human admission applies to a specific evidence version.}
+\label{tab:qualification}
+\small
+\input{tables/qualification}
+\end{table}
+
+We first read 156 findings, one per family per round, up to six per family. Hashes fixed the order within and across families. Of these, 88 had a landed or traceable revision attributable to the finding and advanced to scope review. The other 68 remained in the pool pending an accessible, attributable revision. Three further waves of 24 reserve findings followed the same family rotation. Within each wave, we prioritized findings with a landed revision and a contract test filename. We made no outcome-based substitutions.
+
+Of the 160 reviewed, 38 cleared scope review. This yield is conditional on documentary selection and cannot estimate a clearance rate for the full collection. Another 79 awaited a decision, 25 needed more evidence, and 18 were excluded. The 38 clearances spanned 15 families. With at most four findings per family, at most 34 of these 38 could enter the roster even if all met the remaining requirements. The cap applies across both collections and limits how often a set of related findings can contribute to a result. In applying it, we check shared code, aliases, and fixes that appear under more than one report.
+
+Both historical revisions built for 37 of the 38 findings. Only 18 demonstrated the specified affected ordinary use offline on both revisions. The technical qualification record identifies 19 findings that depended on access to historical network state and one build failure. For 17 of the 18 offline findings, the records name individual test functions for the affected ordinary use and record a pass on both revisions. For the eighteenth, the per-revision results record execution and a pass for the files designated to test that ordinary use on each tree. The summary names no individual function for that finding. It supports the file-level result but cannot identify which individual calls ran.
+
+\subsection{What the two historical revisions establish}
+
+The starting and fixed revisions provide controls for the meaning of a grade, an approach with precedents in vulnerability repair and in grading against historical patches. The starting tree should exhibit the documented defect under the stated condition. The reference should exercise that condition and show a permitted correction. Both trees should support ordinary use of the affected feature. We record how the reference relates to the developer's change, including other edits that could explain an observed difference. A port requires evidence of comparable behaviour under the recorded compiler and optimizer settings.~\cite{bui2022vul4j,ye2021assessment}
+
+Fifteen findings had a recorded assessment of the designated reported example, A. A model reader found the results interpretable on both revisions for fourteen (Table~\ref{tab:qualification}). Table~\ref{tab:historical-controls} describes the newest round at a different level of detail. Seven checks on six findings produced the expected change in execution results between revisions. The automated grader labelled two observations valid, four unresolved, and one as failing for the wrong reason. The model reader accepted all seven historical observations subject to stated limits. It had helped identify the conditions being assessed. Its interpretation of a saved result adds evidence about what happened on those trees. The original automatic label remains part of the record.
+
+\begin{table}[tbp]
+\centering
+\caption{Seven fourth-round checks on six findings. Execution, automatic interpretation, and model reading describe the same checks on the historical revisions.}
+\label{tab:historical-controls}
+\small
+\input{tables/historical-controls}
+\end{table}
+
+Eligibility for a distinct withheld behaviour, H, requires its own evidence. The public record must support a caller-visible obligation that can still be wrong when the reported one is right. Another input to the same assertion, ordinary use, or an observation that follows automatically from satisfying A cannot establish this distinction. Across different instances we require separate satisfiability and record the relationship for analysis. The aggregate review found two such observations supported by documentary evidence before admission. Their contribution would depend on what each caller could receive if only the other obligation were repaired. For the paired comparison we also need a second eligible example B and a common H distinct from both. The initial scope screen cleared no pairs among 160 findings. A targeted second reading found two documentary candidates among twelve overlapping findings. These are candidates found by further reading of the same collection. Neither has a signed paired admission.
+
+\subsection{Why a permitted result needs its own evidence}
+
+We changed the admission rules in two internally registered decisions on 23 November 2026. The first moved a distinct H from a requirement on every case to a separate outcome on cases that support it. The historical development results, 112 external scope reviews, 23 two-revision builds and seven preliminary external security records were known. Repeated observations and failures with an unexpected cause had already made it difficult to defend a second obligation for every case. Defining H eligibility separately allows a primary decision when the historical evidence supports only the reported behaviour.
+
+The second decision followed the fourth-round controls in Table~\ref{tab:historical-controls}. Where A detects a violation, its disappearance on a new patch could mean that the patch suppressed the required operation. We therefore require a separate positive assessment of a permitted outcome for the same requirement and condition. On the starting tree it must reach the condition and reject the observed outcome for the documented reason. On the reference it must reach and affirm an allowed result. On a submitted patch the original observation must be interpretable, the positive assessment must confirm a permitted result, and build and ordinary use must also succeed. A correct alternative implementation can earn credit. For example, if the requirement allows a range of answers, the grader must recognize that range. A documented rejection can also be the permitted result. An existing assertion can supply the positive evidence if it was separately assessed on both trees. Merely inverting the original verdict supplies no evidence that the operation reached a permitted outcome. The grader alone holds this positive assessment in either assignment. It measures A again. It adds no distinct behaviour or session. The same standard applies to B and H wherever either receives a grade.
+
+Five earlier admission pages await replacement under this amendment (Table~\ref{tab:qualification}). A human reviewer must verify the finding, revisions, requirement, builds, ordinary use, both historical observations, and grading rule, then sign the current evidence version. Later changes to that evidence require a new decision. Neither internal amendment used expanded-benchmark repairs. At the reporting cut there were zero signed primary, H, or paired admissions. We can therefore specify how a session would be assigned and graded while keeping those design quantities separate from the historical counts.
