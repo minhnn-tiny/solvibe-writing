@@ -1,6 +1,6 @@
 # What Does a Passing Regression Test Tell Us About a Solidity Repair?
 
-Anonymous working manuscript for the ISSTA 2027 Research Papers track. The evidence cut is 23 November 2026. The paper reports historical development and case qualification. The expanded repair study awaits signed cases and assigned sessions.
+Anonymous working manuscript for the ISSTA 2027 Research Papers track. The evidence cut is 26 November 2026 at 15:35 Singapore time. The paper reports historical development and case qualification. The expanded repair study awaits signed cases and assigned sessions.
 
 ## Overleaf and GitHub
 
